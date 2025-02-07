@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=<device width>,initial-scale1.0">
+            <title>Document</title>
+            <script>
+                let users=[]//array
+                function showData(){
+                    let name=document.getElementById("name").value
+                    let email=document.getElementById("email").value
+                    let password=document.getElementById("password").value
+                    let dob=document.getElementById("dob").value
+                    //data.innerHTML=name + " | " + email + password + dob
+                    //data.innerHTML=`${name} , ${email} , ${password} , ${dob} `//backtick not inverted comma
+                    let user={//object
+                        name:name,
+                        email:email,
+                        password:password,
+                        dob:dob
+                    }
+                    users.push(user)
+                    console.log(users)//in console we can see that there r 2 arrays
+                    let length=users.length;
+                    let str="";
+                    for(let i=0;i<length;i++){
+                        str=str+`<li>${users[i].name}-${users[i].email}-${users[i].password}</li>`
+
+                    }
+                    data.innerHTML=str
+                }
+            </script>
+    </head>
+    <body>
+        <h1>New User Registration Form</h1>
+        <p><input type="text" id="name" placeholder="Enter name"></p>
+        <p><input type="text" id="email" placeholder="Enter email address"></p>
+        <p><input type="password" id="password" placeholder="Enter password"></p>
+        <p><input type="datetime-local" id="dob"></p>
+        <button onclick="showData()"> Register</button>
+    <hr>
+    <div id="data"></div>
+
+    </body>
+</html>
